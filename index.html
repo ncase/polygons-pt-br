@@ -30,24 +30,25 @@
 
 	<!-- CSS -->
 	<link href="css/index.css" rel="stylesheet" type="text/css">
+  <link href="css/intro.css" rel="stylesheet" type="text/css">
+  <link href="css/footer.css" rel="stylesheet" type="text/css">
 
 	<meta charset="utf-8">
 
 </head>
 <body>
 
-	<!-- CARTOONS -->
-	<div id="cartoon_container">
-		<img id="cartoon" width="270" src=""/>
-		<div id="cartoon_arrow"></div>
-	</div>
 
 	<!-- SPLASH -->
-	<div id="intro_container">
-		<div id="intro">
-			<iframe src="play/intro/intro.html" id="intro_background" scrolling="no"></iframe>
-		</div>
-	</div>
+	<header id="intro_container">
+      <canvas id="canvas" class="canvas-intro" width="1280" height="300" style="position:absolute;bottom:0"></canvas>
+      <h1 id="intro_shading">Parábola dos Polígonos - um artigo interativo sobre a forma da sociedade</h1>
+      <p id="intro_text">
+        por <a href="http://vihart.com/" target="_blank">vi hart</a> + <a href="http://ncase.me/" target="_blank">nicky case</a>
+        <br/>
+        <span style='font-size:18px;'>traduzido por <a href="https://twitter.com/danillonunes" target="_blank">@danillonunes</a> e <a href="https://twitter.com/bassarisse" target="_blank">@bassarisse</a></span>
+      </p>
+	</header>
 
 	<!-- CHAPTER -->
 	<div class="chapter">
@@ -364,15 +365,10 @@
 					<br><br>
 
 					<b>Também Visto Em:</b><br>
-					<a target="_blank" href="http://www.wired.com/2014/12/empzeal-parable-polygons/">WIRED</a>,
-					<a target="_blank" href="http://www.washingtonpost.com/blogs/wonkblog/wp/2014/12/09/how-tiny-individual-biases-have-huge-cumulative-effects-on-racial-segregation/">Washington Post</a>,
-					<a target="_blank" href="http://boingboing.net/2014/12/08/parable-of-the-polygons-segre.html">BoingBoing</a>,
-					<a target="_blank" href="http://ccthing.tumblr.com/post/104764760336/parable-of-the-polygons-vi-hart-and-nicky-case">Creative Commons</a>,
-					<a target="_blank" href="http://killscreendaily.com/articles/parable-polygons-teaches-us-danger-and-power-individual-bias/">KillScreen</a>,
-					<a target="_blank" href="http://jayisgames.com/archives/2014/12/parable_of_the_polygons.php">JayIsGames</a>,
-					<a target="_blank" href="https://news.ycombinator.com/item?id=8716538">Hacker News</a>,
-					<a target="_blank" href="http://www.metafilter.com/145147/Parable-of-the-Polygons">MetaFilter</a>,
-					<a target="_blank" href="http://nymag.com/scienceofus/2014/12/these-cartoon-shapes-are-adorable-but-racist.html">New York Magazine</a>
+          <p class="visto-em">
+            //JS INCLUI VEICULOS DE MÍDIA
+          </p>
+
 
 					<br><br>
 
@@ -394,15 +390,71 @@
 	</div>
 
 	<!-- SPLASH -->
-	<div id="outro_container">
-		<div id="outro">
-			<iframe src="play/outro/outro.html" id="outro_background" scrolling="no"></iframe>
+	<footer id="outro_container">
+
+    <canvas id="canvas" class="canvas-footer" width="1280" height="300" style="position:absolute;bottom:0"></canvas>
+		<div class="shadow"></div>
+		<div id="share_text">
+
+			COMPARTILHE<span style="position:relative;top:-5px">:</span>
+
+			<a data-popup-url="https://www.facebook.com/sharer.php?u=http%3A%2F%2Fncase.me%2Fpolygons-pt-br%2F&amp;t=Parábola dos Polígonos: um artigo interativo sobre como escolhas inofensivas podem criar um mundo perigoso."
+				data-popup-width="626" data-popup-height="436"
+				onclick="return sharePopup.call(this,event);">
+				<img src="play/img/icons/facebook.png" width="60" height="60"/></a>
+
+			<a data-popup-url="https://twitter.com/share?url=http%3A%2F%2Fncase.me%2Fpolygons-pt-br%2F&amp;text=Parábola dos Polígonos: um artigo interativo sobre como escolhas inofensivas podem criar um mundo perigoso. De @vihartvihart e @ncasenmare."
+				data-popup-width="640" data-popup-height="400"
+				onclick="return sharePopup.call(this,event);">
+				<img src="play/img/icons/twitter.png" width="60" height="60"/></a>
+
+			<a data-popup-url="https://plus.google.com/share?url=http%3A%2F%2Fncase.me%2Fpolygons-pt-br%2F"
+				data-popup-width="600" data-popup-height="460"
+				onclick="return sharePopup.call(this,event);">
+				<img src="play/img/icons/googleplus.png" width="60" height="60"/></a>
+
+			<a data-popup-url="https://www.tumblr.com/share/link?url=http%3A%2F%2Fncase.me%2Fpolygons-pt-br%2F&amp;name=Parábola dos Polígonos&amp;description=Um artigo interativo sobre como escolhas inofensivas podem criar um mundo perigoso."
+				data-popup-width="446" data-popup-height="430"
+				onclick="return sharePopup.call(this,event);">
+				<img src="play/img/icons/tumblr.png" width="60" height="60"/></a>
+
+			<a href="http://www.reddit.com/submit" onclick="window.open('http://www.reddit.com/submit?v=5&amp;noui&amp;jump=close&amp;url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title), 'Parábola dos Polígonos','toolbar=no,width=840,height=750'); return false;">
+			<img src="play/img/icons/reddit.png" alt="enviar ao reddit" width="60" height="60" border="0"/></a>
+
+			<a href="http://www.stumbleupon.com/submit?url=http://ncase.me/polygons-pt-br/" target="_blank">
+      <img style="border: 0pt none;" src="play/img/icons/stumbleupon.png" border="0" alt="stumble" width="60" height="60" /></a>
+
 		</div>
-	</div>
+		<div id="pd_text">
+			<span style="font-size:35px; color:#fff">esse artigo jogável é
+				<a target="_blank" href="http://creativecommons.org/publicdomain/zero/1.0/" style="color:#fff">domínio público</a>.
+			</span>
+			<p>
+				sinta-se à vontade para usá-lo em suas aulas,
+				fazer adaptações em vídeos/fotos/texto,
+				ou modificar o <a href="https://github.com/ncase/polygons" target="_blank">código-fonte</a>!
+				atribuição não é obrigatória, mas super apreciada.
+				nós somos <a href="http://vihart.com/" target="_blank">vi hart</a> e <a href="http://ncase.me/" target="_blank">nicky case</a>.
+        (tradução por <a href="http://danillonunes.com/" target="_blank">danillo nunes</a> e <a href="http://bassarisse.com/" target="_blank">bruno assarisse</a>)
+			</p>
+			<p>
+				mostre-nos como você está usando e remixando a Parábola dos Polígonos!
+				<br>
+				contate-nos no twitter em
+				<a href="https://twitter.com/vihartvihart" target="_blank">@vihartvihart</a> e
+				<a href="https://twitter.com/ncasenmare" target="_blank">@ncasenmare</a> (inglês), e
+        <a href="https://twitter.com/danillonunes" target="_blank">@danillonunes</a> e <a href="https://twitter.com/bassarisse" target="_blank">@bassarisse</a> (português).
+			</p>
+		</div>
+
+	</footer>
 
 </body>
 
 <script src="js/Mouse.js"></script>
-<script src="js/intro.js"></script>
+<script src="js/MouseBlah.js"></script>
+<script src="js/canvas-generator.js"></script>
+<script src="js/main.js"></script>
+<script src="js/popup.js"></script>
 
 </html>
