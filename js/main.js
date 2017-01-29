@@ -45,3 +45,6 @@ var stringDeNoticias = vistoEm.map(function(noticia, index){
 });
 
 areaDasNoticias.innerHTML = stringDeNoticias.join(' ');
+
+simpleCanvasGenerator('.canvas-intro', 'sad');
+simpleCanvasGenerator('.canvas-footer', 'happy');
